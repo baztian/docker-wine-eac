@@ -113,8 +113,8 @@ REGEDIT4
 "CorrectDialogBug"=hex:ff
 "DeleteFileOnCDCopy"=hex:ff
 "DetectUPC"=hex:00
-"DirectorySpecification"="C:\\"
-"DirectoryUse"=hex:01,00,00,00
+"DirectorySpecification"="Z:\\Data\\"
+"DirectoryUse"=hex:00,00,00,00
 "DisableCDAutostart"=hex:00
 "DisableCopyProtection"=hex:00
 "EjectWhenDone"=hex:ff
