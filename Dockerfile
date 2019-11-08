@@ -2,12 +2,13 @@ FROM baztian/wine
 
 RUN WINEARCH=win32 xvfb-run -a winetricks -q dotnet20 \
     && rm -rf ~/.cache/winetricks/*
+ENV LAME_VERSION=3.100-20190806
 ENV LAME_HASH=4f77f9b1186674bf92c0f69b5923e94a38f88058
-RUN curl -L -o /tmp/lame.zip http://www.rarewares.org/files/mp3/lame3.100-20190806.zip && \
+RUN curl -L -o /tmp/lame.zip http://www.rarewares.org/files/mp3/lame${LAME_VERSION}.zip && \
     echo ${LAME_HASH} /tmp/lame.zip | (sha1sum -c && \
     unzip -u /tmp/lame.zip -d ${USER_PATH} lame.exe lame_enc.dll && rm /tmp/lame.zip)
-ENV EAC_VERSION=1.1
-ENV EAC_HASH=aa8ef57bb3bf0be7c00a32272c1b4ab7579934ec
+ENV EAC_VERSION=1.3
+ENV EAC_HASH=49f1028bd2b0cce0829250430bf8771c4a766daf
 RUN curl -L -o /tmp/eac.exe http://www.exactaudiocopy.de/eac-${EAC_VERSION}.exe && \
     echo ${EAC_HASH} /tmp/eac.exe | ( sha1sum -c && \
     WINEARCH=win32 xvfb-run -a wine /tmp/eac.exe /S && rm /tmp/eac.exe && wineserver --wait && \
