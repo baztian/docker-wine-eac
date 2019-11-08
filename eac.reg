@@ -120,7 +120,7 @@ REGEDIT4
 "EjectWhenDone"=hex:ff
 "ExtractionPriority"=hex:01,00,00,00
 "FileNameReplaceSpaces"=hex:00
-"FileNamingConvention"="%tracknr2% %title%"
+"FileNamingConvention"="%albumartist%\\%albumtitle%\\%tracknr2% %artist% - %title%"
 "FillUpMissingSamples"=hex:ff
 "GapsHandlingDefault"=hex:ff
 "HibernateOnly"=hex:ff
