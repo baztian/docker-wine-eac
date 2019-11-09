@@ -1,0 +1,26 @@
+REGEDIT4
+
+[HKEY_CURRENT_USER\Software\AWSoftware\EACU\Compression Options]
+"ExternalEncodeRate"=hex:c0,00,00,00
+"ExternalEncoderCheckReturnCode"=hex:ff
+"ExternalEncoderCreateCRC"=hex:00
+"ExternalEncoderOptions"="%islow%-V 5%islow%%ishigh%-V 2%ishigh% --vbr-new %source% %dest%"
+"ExternalEncoderProgram"="C:\\users\\wineuser\\My Documents\\LAME.EXE"
+"ExternalEncoderType"=hex:14,00,00,00
+"UseExternalEncoder"=hex:ff
+
+[HKEY_CURRENT_USER\Software\AWSoftware\EACU\Extraction Options]
+"CheckReadCommandD8"=hex:00
+"DirectorySpecification"="Z:\\Data\\"
+"DirectoryUse"=hex:00,00,00,00
+"EjectWhenDone"=hex:ff
+"FileNamingConvention"="%albumartist%\\%albumtitle%\\%tracknr2% %artist% - %title%"
+"ID"=hex:6d,77,6c,62
+"UseNativeSCSIInterface"=hex:00
+
+[HKEY_CURRENT_USER\Software\AWSoftware\EACU\StartUp Options]
+"ActualDriveAdapter"=hex:01,00,00,00
+"AskGD3"=hex:00
+"EasyGUI"=hex:ff
+"NumRuns"=dword:00000002
+

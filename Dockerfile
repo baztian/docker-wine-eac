@@ -25,7 +25,7 @@ RUN (cd /wine/drive_c/Program\ Files/Exact\ Audio\ Copy/ && regsvr32 sql*) || tr
 # wineuser@ba5a92e2a120:/$ regedit /E - 'HKEY_CURRENT_USER\Software\AWSoftware\EACU' > /tmp/eac.reg
 # Or even better: export as REGEDIT4 file from regedit GUI and then copy via
 # docker cp wine-eac:/tmp/eac.reg .
-ADD eac.reg ${USER_PATH}/
-RUN regedit ${USER_PATH}/eac.reg && wineserver --wait && rm -rf /tmp/.wine* /tmp/wine*
+ADD eac-diff.reg ${USER_PATH}/
+RUN regedit ${USER_PATH}/eac-diff.reg && wineserver --wait && rm -rf /tmp/.wine* /tmp/wine*
 RUN mkdir /wine/userdata && mv /wine/user.reg /wine/userdata/ && ln -sf userdata/user.reg /wine/user.reg
 ENTRYPOINT wine /wine/drive_c/Program\ Files/Exact\ Audio\ Copy/EAC.exe && wineserver --wait
