@@ -5,8 +5,8 @@ RUN usermod -aG cdrom wineuser
 USER wineuser
 RUN WINEARCH=win32 xvfb-run -a winetricks -q vcrun2008 dotnet20 && wineserver --wait \
     && rm -rf ~/.cache/winetricks/*
-ENV LAME_VERSION=3.100-20190806
-ENV LAME_HASH=4f77f9b1186674bf92c0f69b5923e94a38f88058
+ENV LAME_VERSION=3.100-20190722
+ENV LAME_HASH=04196577fad783cff6c4b847b46a4ef9e3c5b728
 RUN curl -L -o /tmp/lame.zip http://www.rarewares.org/files/mp3/lame${LAME_VERSION}.zip && \
     echo ${LAME_HASH} /tmp/lame.zip | (sha1sum -c && \
     unzip -u /tmp/lame.zip -d ${USER_PATH} lame.exe lame_enc.dll && rm /tmp/lame.zip)
