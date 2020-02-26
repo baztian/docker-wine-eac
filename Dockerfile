@@ -3,7 +3,7 @@ FROM baztian/wine
 USER root
 RUN usermod -aG cdrom wineuser
 USER wineuser
-RUN WINEARCH=win32 xvfb-run -a winetricks -q dotnet20 \
+RUN WINEARCH=win32 xvfb-run -a winetricks -q vcrun2008 dotnet20 && wineserver --wait \
     && rm -rf ~/.cache/winetricks/*
 ENV LAME_VERSION=3.100-20190806
 ENV LAME_HASH=4f77f9b1186674bf92c0f69b5923e94a38f88058
