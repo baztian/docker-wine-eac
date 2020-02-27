@@ -12,8 +12,8 @@ ENV LAME_HASH=04196577fad783cff6c4b847b46a4ef9e3c5b728
 RUN curl -L -o /tmp/lame.zip http://www.rarewares.org/files/mp3/lame${LAME_VERSION}.zip && \
     echo ${LAME_HASH} /tmp/lame.zip | (sha1sum -c && \
     unzip -u /tmp/lame.zip -d ${USER_PATH} lame.exe lame_enc.dll && rm /tmp/lame.zip)
-ENV EAC_VERSION=1.4
-ENV EAC_HASH=1f0fd7d403746498b7c418c40d9c019db14c1d53
+ENV EAC_VERSION=1.5
+ENV EAC_HASH=F4B9DA1ABC0ECFCD7466EC903BF87BBA51872B87
 RUN curl -L -o /tmp/eac.exe http://www.exactaudiocopy.de/eac-${EAC_VERSION}.exe && \
     echo ${EAC_HASH} /tmp/eac.exe | ( sha1sum -c && \
     WINEARCH=win32 xvfb-run -a wine /tmp/eac.exe /S && rm /tmp/eac.exe && wineserver --wait && \
